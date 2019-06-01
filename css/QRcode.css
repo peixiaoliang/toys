@@ -39,11 +39,13 @@ body{
 .QRcodeContent{
     width: 10rem;
     height: 10rem;
-    background:url(../images/QRcodeback.png) no-repeat;
-    background-size: 100% 100%;
     margin:0 auto;
     margin-top: 1.5rem;
     position: relative;
+}
+.QRcodeContent img{
+    width: 10rem;
+    height: 10rem;
 }
 .weima_box{
     width: 3.9rem;
