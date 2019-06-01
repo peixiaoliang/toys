@@ -1,0 +1,51 @@
+@charset "UTF-8";
+@import url(style.css);
+body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.QRcode{
+    width: 100%;
+    height: 100%;
+    background:url(../images/background.jpg) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.QRcode .gameTitle{
+    width: 9.26rem;
+    height: 2.96rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 11;
+}
+.QRcode .gameTitle img{
+    width: 100%;
+    height: 100%;
+    margin-top:1rem;
+}
+.QRcodeContent{
+    width: 10rem;
+    height: 10rem;
+    background:url(../images/QRcodeback.png) no-repeat;
+    background-size: 100% 100%;
+    margin:0 auto;
+    margin-top: 1.5rem;
+    position: relative;
+}
+.weima_box{
+    width: 3.9rem;
+    height: 3.9rem;
+    position: absolute;
+    left: 50%;
+    margin-left: -1.95rem;
+    top:2rem;
+    
+}
+.weima_box img{
+    width: 3.9rem;
+    height: 3.9rem;
+}
