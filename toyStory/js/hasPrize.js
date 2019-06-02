@@ -29,14 +29,14 @@ $(function(){
             text: utf16to8(url), //内容   
             typeNumber:-1,//计算模式  
             correctLevel:2,//二维码纠错级别  
-            background:"transparent",//背景颜色  
+            background:"#FFCC00",//背景颜色  
             foreground:"#333366"  //二维码颜色  
       
         });  
     } 
     init(); 
-    function init() {  
-        generateQRCode("canvas",80, 80, "http://riddle.citymsg.cn/riddles/duijiang.html?openid="+sloe+"&dt="+datetime);  
+    function init() {
+        generateQRCode("canvas",80, 80, "http://tips.citymsg.cn/toyStory/duijiang.html?openid="+sloe+"&datetime="+datetime);  
     }
     function utf16to8(str) {  
         var out, i, len, c;  

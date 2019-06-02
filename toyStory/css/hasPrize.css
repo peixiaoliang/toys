@@ -28,14 +28,14 @@ body{
     margin-top:1rem;
 }
 .prizeSuccess{
-    width: 9rem;
-    height: 12.24rem;
+    width: 8.5rem;
+    height: 11.56rem;
     background:url(../images/result-hit.png) no-repeat;
     background-size: 100% 100%;
     margin:0 auto;
     position: relative;
     display: none;
-    margin-top: 0.8rem;
+    margin-top: 0.5rem;
 }
 .weima_box{
     width: 80px;
@@ -43,17 +43,17 @@ body{
     position: absolute;
     z-index: 111;
     right: 1.3rem;
-    top:5rem;
+    top: 4.2rem;
 }
 .giftbox{
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3.3rem;
+    height: 3.3rem;
     text-align: center;
     line-height: 3.5rem;
     position: absolute;
     z-index: 111;
-    left: 1.3rem;
-    top: 4.1rem;
+    left: 1rem;
+    top: 3.5rem;
 }
 .giftbox img{
     width: 3.2rem;
@@ -81,8 +81,8 @@ body{
     margin-top:1rem;
 }
 .prizeMiss{
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
+    height: 9rem;
     background:url(../images/result-miss.png) no-repeat;
     background-size: 100% 100%;
     margin:0 auto;

@@ -1,11 +1,12 @@
 $(function(){
 $("body").css("height",document.body.clientHeight);
+console.log(document.body.clientHeight)
 $(window).resize(function () { 
 	$("body").css("height",document.body.clientHeight);
 	})
 $('.yanzheng_btn').click(function(){
         var numVal=$('.number').val();
-        //console.log(document.documentElement.clientHeight)
+        // console.log(document.documentElement.clientHeight)
         window.scrollTo(0, document.documentElement.clientHeight);
         if(numVal=='123'||numVal=='456'||numVal=='789'){
             function GetQueryString(name){
@@ -72,5 +73,6 @@ $('.yanzheng_btn').click(function(){
         })
 })
 $("input").blur(function(){
+    console.log(document.documentElement.clientHeight)
    window.scrollTo(0, document.documentElement.clientHeight);
 });

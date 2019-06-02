@@ -43,7 +43,9 @@ $(function(){
                     $(".gameBox4 .collectBtn").css({"pointer-events": "none" });
                 }
                 if(datas["ID1"]==="1"&&datas["ID2"]==="1"&&datas["ID3"]==="1"&&datas["ID4"]==="1"){
-                    $(".getPrize").show();
+                    setTimeout(function(){
+                        $(".getPrize").show();
+                    },1000)
                 }
 
             }
@@ -60,99 +62,123 @@ $(function(){
     });
     $(".collectSuccess").click(function(){
         var DataId=$(".gameBox1 .collectBtn").attr("data-id");
-        console.log(DataId)
         $(".readCollect").hide();
-        if(DataId===QRCode().split("id=")[1]){
-            $.ajax({
-                url:'./php/numPost.php?openid='+openid+"&numId="+DataId,
-                async: false,
-                type: 'get',
-                success: function(data){
-                    var datas=eval('(' + data + ')');
-                    if(datas["gather"]==="1"){
-                        setTimeout(function(){
-                            getGift()
-                        },1000)
-                    }else{
-                        alert("收集失败")
-                    }
+        wx.scanQRCode({
+            needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+            scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+            success: function (res) {
+                var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                if(DataId==result.split("id=")[1]){
+                    $.ajax({
+                        url:'./php/numPost.php?openid='+openid+"&numId="+DataId,
+                        async: false,
+                        type: 'get',
+                        success: function(data){
+                            var datas=eval('(' + data + ')');
+                            if(datas["gather"]==="1"){
+                                setTimeout(function(){
+                                    getGift()
+                                },1000)
+                            }else{
+                                alert("收集失败")
+                            }
+                        }
+                    })
+                }else{
+                    alert("扫描的二维码不正确")
                 }
-            })
-        }else{
-            alert("扫描的二维码不正确")
-        }
+            }
+        });
+        
     })
     $(".gameBox2 .collectBtn").click(function(){
         var DataId=$(this).attr("data-id");
-        console.log(DataId)
-        if(DataId===QRCode().split("id=")[1]){
-            $.ajax({
-                url:'./php/numPost.php?openid='+openid+"&numId="+DataId,
-                async: false,
-                type: 'get',
-                success: function(data){
-                    var datas=eval('(' + data + ')');
-                    console.log(datas["gather"])
-                    if(datas["gather"]==="1"){
-                        setTimeout(function(){
-                            getGift()
-                        },1000)
-                    }else{
-                        alert("收集失败")
-                    }
+        wx.scanQRCode({
+            needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+            scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+            success: function (res) {
+                var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                if(DataId==result.split("id=")[1]){
+                    $.ajax({
+                        url:'./php/numPost.php?openid='+openid+"&numId="+DataId,
+                        async: false,
+                        type: 'get',
+                        success: function(data){
+                            var datas=eval('(' + data + ')');
+                            if(datas["gather"]==="1"){
+                                setTimeout(function(){
+                                    getGift()
+                                },1000)
+                            }else{
+                                alert("收集失败")
+                            }
+                        }
+                    })
+                }else{
+                    alert("扫描的二维码不正确")
                 }
-            })
-        }else{
-            alert("扫描的二维码不正确")
-        }
+            }
+        });
      })
     $(".gameBox3 .collectBtn").click(function(){
         var DataId=$(this).attr("data-id");
-        if(DataId===QRCode().split("id=")[1]){
-            $.ajax({
-                url:'./php/numPost.php?openid='+openid+"&numId="+DataId,
-                async: false,
-                type: 'get',
-                success: function(data){
-                    var datas=eval('(' + data + ')');
-                    console.log(datas["gather"])
-                    if(datas["gather"]==="1"){
-                        setTimeout(function(){
-                            getGift()
-                        },1000)
-                    }else{
-                        alert("收集失败")
-                    }
+        wx.scanQRCode({
+            needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+            scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+            success: function (res) {
+                var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                if(DataId==result.split("id=")[1]){
+                    $.ajax({
+                        url:'./php/numPost.php?openid='+openid+"&numId="+DataId,
+                        async: false,
+                        type: 'get',
+                        success: function(data){
+                            var datas=eval('(' + data + ')');
+                            if(datas["gather"]==="1"){
+                                setTimeout(function(){
+                                    getGift()
+                                },1000)
+                            }else{
+                                alert("收集失败")
+                            }
+                        }
+                    })
+                }else{
+                    alert("扫描的二维码不正确")
                 }
-            })
-        }else{
-            alert("扫描的二维码不正确")
-        }
+            }
+        });
     })
     $(".gameBox4 .collectBtn").click(function(){
         var DataId=$(this).attr("data-id");
-        if(DataId===QRCode().split("id=")[1]){
-            $.ajax({
-                url:'./php/numPost.php?openid='+openid+"&numId="+DataId,
-                async: false,
-                type: 'get',
-                success: function(data){
-                    var datas=eval('(' + data + ')');
-                    console.log(datas["gather"])
-                    if(datas["gather"]==="1"){
-                        setTimeout(function(){
-                            getGift()
-                        },1000)
-                    }else{
-                        alert("收集失败")
-                    }
+        wx.scanQRCode({
+            needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+            scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+            success: function (res) {
+                var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                if(DataId==result.split("id=")[1]){
+                    $.ajax({
+                        url:'./php/numPost.php?openid='+openid+"&numId="+DataId,
+                        async: false,
+                        type: 'get',
+                        success: function(data){
+                            var datas=eval('(' + data + ')');
+                            if(datas["gather"]==="1"){
+                                setTimeout(function(){
+                                    getGift()
+                                },1000)
+                            }else{
+                                alert("收集失败")
+                            }
+                        }
+                    })
+                }else{
+                    alert("扫描的二维码不正确")
                 }
-            })
-        }else{
-            alert("扫描的二维码不正确")
-        }
+            }
+        });
     })
     $(".prizeBtn").click(function(){
-        window.location.href="getPrize.html?openid="+openid;
+        window.location.replace("getPrize.html?openid="+openid)
     })
 })
